@@ -1,0 +1,52 @@
+@import url("https://fonts.googleapis.com/css2?family=Sora:wght@100..800&display=swap");
+@import "tailwindcss";
+
+@theme {
+  --font-sans: "Sora", sans-serif;
+  --color-primary: #f65d4e;
+  --color-primary-hover: #f4402f;
+  --color-subtitle: #000000;
+  --color-text: #444444;
+  --color-accent: #000000;
+  --color-lighter: #999999;
+  --color-border: #e6e6e6;
+  --color-star: #fa8c17;
+}
+
+@layer base {
+  body {
+    @apply antialiased;
+  }
+
+  h1 {
+    @apply text-4xl md:text-5xl text-subtitle font-semibold leading-14;
+  }
+
+  h2 {
+    @apply text-4xl font-semibold text-subtitle;
+  }
+
+  h3 {
+    @apply text-base font-bold text-subtitle;
+  }
+
+  a {
+    @apply text-subtitle;
+  }
+
+  p {
+    @apply text-text;
+  }
+
+  span {
+    @apply text-text;
+  }
+
+  .transition {
+    @apply transition-all duration-300;
+  }
+
+  .footer-text-sm {
+    @apply text-lighter font-light text-sm;
+  }
+}

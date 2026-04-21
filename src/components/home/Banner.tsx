@@ -1,0 +1,40 @@
+import { Icon } from "../common";
+import bgBooks from "../../assets/images/revslider_decor-1.png";
+import books from "../../assets/images/revslider_book-2.png";
+import { faChevronRight } from "@fortawesome/free-solid-svg-icons";
+
+const Banner = () => (
+  <section className="py-4.5">
+    <div className="max-w-7xl mx-auto">
+      <div className="bg-[#fcecec] rounded-2xl px-7.5 py-15 grid md:grid-cols-2 items-center gap-3">
+        <div className="relative lg:place-self-center">
+          <div
+            className="bg-contain w-93.75 bg-center h-80"
+            style={{ backgroundImage: `url(${bgBooks})` }}
+          >
+            <img src={books} alt="books" className="w-68 mx-auto" />
+          </div>
+        </div>
+
+        <div>
+          <p className="uppercase text-xs text-lighter mb-5">Editor Choice</p>
+
+          <h1 className="lg:hidden">Top 10 Books To Make It A Great Year</h1>
+          <h1 className="hidden lg:block">
+            Top 10 Books <br /> To Make It A <br /> Great Year
+          </h1>
+
+          <button className="group bg-white font-semibold px-6 py-3 mt-8 rounded-full shadow hover:bg-black hover:text-white transition">
+            Shop Now{" "}
+            <Icon
+              icon={faChevronRight}
+              className="ml-1.5 text-xs group-hover:text-primary"
+            />
+          </button>
+        </div>
+      </div>
+    </div>
+  </section>
+);
+
+export default Banner;
