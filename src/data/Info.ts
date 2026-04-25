@@ -6,22 +6,22 @@ import Info4 from "../assets/images/Home04_imb3.jpg";
 export const infoData = [
   {
     image: Info1,
-    title: "Selection",
-    text: "We have more than 13 million titles to choose from, from the earliest board books to the all-time classics.",
+    title: "Amplia selección",
+    text: "Contamos con más de 13 millones de títulos para elegir, desde libros infantiles hasta los grandes clásicos de todos los tiempos.",
   },
   {
     image: Info2,
-    title: "Purchasing Power",
-    text: "With Wish Lists you can choose to be notified the instant we find a copy, see how often we find rare titles.",
+    title: "Ventajas de compra",
+    text: "Con las listas de deseos puedes recibir notificaciones cuando encontremos un ejemplar y ver con qué frecuencia aparecen títulos poco comunes.",
   },
   {
     image: Info3,
-    title: "Used & New books",
-    text: "If there is no demand for a book, we will donate it to charity, or we'll recycle it.",
+    title: "Libros nuevos y usados",
+    text: "Si un libro no tiene demanda, lo donamos a organizaciones benéficas o lo reciclamos de manera responsable.",
   },
   {
     image: Info4,
-    title: "Shipping & More",
-    text: "When you've found the books you want we'll ship qualifying orders to your door for FREE.",
+    title: "Envíos y más",
+    text: "Cuando encuentres los libros que buscas, enviamos pedidos seleccionados directamente a tu puerta sin costo.",
   },
 ];

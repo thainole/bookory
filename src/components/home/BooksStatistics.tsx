@@ -7,7 +7,7 @@ const BooksStatistics = () => (
       <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6 text-center">
         {bookstoreStatistics.map((item, index) => (
           <div
-            key={index}
+            key={`statistics-${index}`}
             className="group flex flex-row items-center gap-7.5 border border-border rounded-2xl py-10 px-4"
           >
             <div

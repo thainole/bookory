@@ -10,34 +10,26 @@ interface Book {
   price: string;
 }
 
-const BookCard = ({
-  book,
-  imgStyle,
-  className = "",
-}: {
-  book: Book;
-  imgStyle?: React.CSSProperties;
-  className?: string;
-}) => {
+const BookCardSm = ({ book }: { book: Book }) => {
   return (
-    <div className={`flex flex-col h-full ${className}`}>
-      <div className="image-wrapper" style={imgStyle}>
+    <div className="flex h-full gap-x-5 md:gap-x-7.5">
+      <div className="w-20">
         <img
           src={book.image}
           alt={book.title}
-          className="rounded-xl lg:rounded-2xl hover:cursor-pointer"
+          className="rounded-lg lg:rounded-xl hover:cursor-pointer w-20"
         />
       </div>
 
-      <div className="content flex flex-col flex-1">
-        <h3 className="font-semibold truncate hover:text-primary hover:cursor-pointer transition mb-1.5">
+      <div className="content flex flex-col flex-1 truncate justify-between">
+        <h3 className="font-semibold truncate hover:text-primary hover:cursor-pointer transition">
           {book.title}
         </h3>
-        <p className="text-lighter text-xs hover:text-primary hover:cursor-pointer mb-2 truncate">
+        <p className="text-lighter text-xs hover:cursor-pointer truncate hover:text-primary">
           {book.author}
         </p>
 
-        <div className="flex flex-row gap-1.5 items-center mb-2.5">
+        <div className="flex flex-row gap-1.5 items-center">
           <div className="flex flex-row gap-px">
             <Icon icon={solidStar} className="text-xs text-star" />
             <Icon icon={solidStar} className="text-xs text-star" />
@@ -48,7 +40,7 @@ const BookCard = ({
           <span className="text-xs font-semibold">{book.totalOpinions}</span>
         </div>
 
-        <span className="text-primary text-xl font-semibold mt-px">
+        <span className="text-primary text-xl font-semibold">
           ${book.price}
         </span>
       </div>
@@ -56,4 +48,4 @@ const BookCard = ({
   );
 };
 
-export default BookCard;
+export default BookCardSm;

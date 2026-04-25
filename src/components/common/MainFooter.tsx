@@ -9,59 +9,63 @@ const MainFooter = () => (
         <div className="flex flex-col gap-3.5 md:gap-7.5 pr-7">
           <img src={logo} alt="Bookory" className="w-37.5" />
           <span className="footer-text-sm leading-7.5">
-            1418 River Drive, Suite 35 <br />
-            Cottonhall, CA 9622
+            Bolognesi 510
+            <br />
+            Miraflores 15074
           </span>
-          <span className="uppercase underline footer-text-sm text-white">
-            show on map
+          <span className="uppercase underline footer-text-sm text-white cursor-pointer">
+            Ver en mapa
           </span>
         </div>
         <div className="grid grid-cols-2 md:grid-cols-4 lg:grid-cols-5 flex-1 gap-3 gap-y-6 lg:gap-3 md:pl-4 lg:pl-7 md:border-l md:border-white">
           <div className="col-span-1 lg:col-span-2 flex flex-col gap-3 pr-2">
             <span className="text-white font-semibold">Need Help</span>
             <span className="text-primary text-xl md:text-2xl lg:text-3xl font-semibold">
-              +(84) - 1800 - 4635
+              +(01) 713-505
             </span>
             <div className="flex flex-col mt-1">
               <span className="footer-text-sm">
-                Monday – Friday: 9:00-20:00
+                Domingo a Jueves: 10:00-21:00
               </span>
-              <span className="footer-text-sm">Saturday: 11:00 – 15:00</span>
+              <span className="footer-text-sm">
+                Viernes y Sábados: 10:00 – 22:00
+              </span>
             </div>
             <span className="text-white font-light text-[18px] mt-1 break-all">
-              contact@example.com
+              bookory-libreria@gmail.com
             </span>
           </div>
-          <div className="flex flex-col gap-3">
-            <span className="text-white font-semibold mb-1">Explore</span>
-            <span className="footer-text-sm">About us</span>
-            <span className="footer-text-sm">Sitemap</span>
-            <span className="footer-text-sm">Bookmarks</span>
-            <span className="footer-text-sm">Sign in / Join</span>
+          <div className="flex flex-col gap-3 group-links">
+            <span className="text-white font-semibold mb-1">Explora</span>
+            <span className="footer-text-sm">Sobre nosotros</span>
+            <span className="footer-text-sm">Mapa del sitio</span>
+            <span className="footer-text-sm">Marcadores</span>
+            <span className="footer-text-sm">Ingresa/Regístrate</span>
           </div>
-          <div className="flex flex-col gap-3">
-            <span className="text-white font-semibold mb-1">Our Service</span>
-            <span className="footer-text-sm">Help Center</span>
-            <span className="footer-text-sm">Returns</span>
-            <span className="footer-text-sm">Product Recalls</span>
-            <span className="footer-text-sm">Accessibility</span>
-            <span className="footer-text-sm">Contact Us</span>
-            <span className="footer-text-sm">Store Pickup</span>
+          <div className="flex flex-col gap-3 group-links">
+            <span className="text-white font-semibold mb-1">
+              Nuestros servicios
+            </span>
+            <span className="footer-text-sm">Centro de ayuda</span>
+            <span className="footer-text-sm">Recojo en tienda</span>
+            <span className="footer-text-sm">Devoluciones</span>
+            <span className="footer-text-sm">Accesibilidad</span>
+            <span className="footer-text-sm">Contáctanos</span>
           </div>
-          <div className="flex flex-col gap-3">
-            <span className="text-white font-semibold mb-1">Categories</span>
-            <span className="footer-text-sm">Action</span>
-            <span className="footer-text-sm">Comedy</span>
-            <span className="footer-text-sm">Drama</span>
-            <span className="footer-text-sm">Horror</span>
-            <span className="footer-text-sm">Kids</span>
+          <div className="flex flex-col gap-3 group-links">
+            <span className="text-white font-semibold mb-1">Categorías</span>
+            <span className="footer-text-sm">Novelas</span>
+            <span className="footer-text-sm">Historias</span>
+            <span className="footer-text-sm">Literatura</span>
+            <span className="footer-text-sm">Biografías</span>
+            <span className="footer-text-sm">Ficción</span>
           </div>
         </div>
       </div>
       <div className="py-11.25 flex flex-col sm:flex-row justify-between gap-y-4">
         <span className="text-white font-light text-sm">
-          Copyright © 2026 <span className="text-primary">Bookory</span>. All
-          rights reserved.
+          Copyright © 2026 <span className="text-primary">Bookory</span>. Todos
+          los derechos reservados
         </span>
         <img
           src={cards}

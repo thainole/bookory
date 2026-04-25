@@ -1,31 +1,38 @@
-import { Container } from "../common";
+import { BookCard, Button, Container } from "../common";
+import { featuredAuthor } from "../../data";
 
 const FeaturedAuthor = () => {
   return (
     <section className="py-20">
       <Container>
-        <div className="grid md:grid-cols-2 gap-12 items-center">
-          <div>
-            <p className="text-primary uppercase text-sm mb-2">
-              Featured Author
+        <div className="grid sm:grid-cols-2 lg:grid-cols-3 gap-7.5">
+          <div className="grid-cols-1 place-items-center text-center sm:text-right sm:place-items-end">
+            <p className="text-primary uppercase text-sm mb-5">
+              Autor destacado
             </p>
 
-            <h2 className="text-4xl font-semibold mb-6">Jessica Munoz</h2>
+            <h2 className="mb-6 lg:text-5xl">{featuredAuthor.name}</h2>
 
-            <p className="text-lighter mb-6 leading-relaxed">
-              Janice Hallett is a British author, screenwriter and journalist,
-              best known for her debut thriller.
+            <p className="text-text text-sm mb-6 leading-relaxed whitespace-pre-line">
+              {featuredAuthor.description}
             </p>
 
-            <button className="bg-primary text-white px-6 py-3 rounded-full hover:bg-primary-hover">
-              View Profile
-            </button>
+            <Button>Ver más</Button>
           </div>
 
-          <div className="grid grid-cols-2 gap-4">
-            {/* <img src="/author-main.jpg" className="col-span-2 rounded-xl" />
-            <img src="/book1.jpg" />
-            <img src="/book2.jpg" /> */}
+          <div className="grid-cols-1">
+            <img src={featuredAuthor.image} />
+          </div>
+
+          <div className="grid grid-cols-2 sm:grid-cols-4 lg:grid-cols-2 sm:col-span-2 lg:col-span-1 gap-7.5">
+            {featuredAuthor.books.map((book) => (
+              <BookCard
+                book={book}
+                key={`author-${book.id}`}
+                imgStyle={{ paddingTop: 0 }}
+                className="max-w-40"
+              />
+            ))}
           </div>
         </div>
       </Container>

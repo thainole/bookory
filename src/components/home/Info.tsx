@@ -6,8 +6,11 @@ const Info = () => {
     <section className="py-16">
       <Container>
         <div className="w-full grid md:grid-cols-2 lg:grid-cols-4 text-center items-baseline gap-y-15">
-          {infoData.map((item) => (
-            <div key={item.title} className="flex flex-col items-center px-4">
+          {infoData.map((item, index) => (
+            <div
+              key={`info-${index}`}
+              className="flex flex-col items-center px-4"
+            >
               <div className="mb-7">
                 <img src={item.image} alt={item.title} />
               </div>

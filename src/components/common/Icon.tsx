@@ -1,6 +1,16 @@
-import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
+import type { IconDefinition } from "@fortawesome/free-brands-svg-icons";
+import {
+  FontAwesomeIcon,
+  type CSSVariables,
+} from "@fortawesome/react-fontawesome";
 
-const Icon = ({ icon, className, style }: any) => (
+interface Props {
+  icon: IconDefinition;
+  className?: string;
+  style?: React.CSSProperties & CSSVariables;
+}
+
+const Icon = ({ icon, className = "", style }: Props) => (
   <FontAwesomeIcon icon={icon} className={className} style={style} />
 );
 

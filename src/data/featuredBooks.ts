@@ -1,51 +1,57 @@
-import book1 from "../assets/images/32.jpg";
-import book2 from "../assets/images/31.jpg";
-import book3 from "../assets/images/30.jpg";
-import book4 from "../assets/images/35.jpg";
-import book5 from "../assets/images/34.jpg";
-import book6 from "../assets/images/33.jpg";
+import book1 from "../assets/images/books/noches-blancas.jpg";
+import book2 from "../assets/images/books/pizarnik.jpg";
+import book3 from "../assets/images/books/cien-años-de-soledad.jpg";
+import book4 from "../assets/images/books/corazon-tan-blanco.jpg";
+import book5 from "../assets/images/books/carta-al-padre.jpg";
+import book6 from "../assets/images/books/la-insoportable-levedad-del-ser.jpg";
 
 export const featuredBooks = [
   {
+    id: 1,
     image: book1,
-    title: "My Dearest Darkest",
+    title: "Noches blancas",
     totalOpinions: 5,
-    author: "Enrique Wallace",
-    price: "91.45",
+    author: "Fiódor Dostoievski",
+    price: "49.99",
   },
   {
+    id: 2,
     image: book2,
-    title: "House of Sky and Breath",
+    title: "Diarios",
     totalOpinions: 4,
-    author: "Ernesto Wade",
+    author: "Alejandra Pizárnik",
     price: "72.99",
   },
   {
+    id: 3,
     image: book3,
-    title: "Each of us a desert",
-    totalOpinions: 9,
-    author: "Mark Oshiro",
+    title: "Cien años de soledad",
+    totalOpinions: 5,
+    author: "Gabriel García Márquez",
     price: "82.85",
   },
   {
+    id: 4,
     image: book4,
-    title: "Long Live the Post Horn!",
-    totalOpinions: 7,
-    author: "Vigdis Hjorth",
+    title: "Corazón tan blanco",
+    totalOpinions: 4,
+    author: "Javier Marías",
     price: "70.05",
   },
   {
+    id: 5,
     image: book5,
-    title: "Piranesi",
-    totalOpinions: 7,
-    author: "Susanna Clarke",
+    title: "Carta al padre",
+    totalOpinions: 4,
+    author: "Franz Kafka",
     price: "50.89",
   },
   {
+    id: 6,
     image: book6,
-    title: "Annie Leibovitz: Wonderland",
-    totalOpinions: 2,
-    author: "A. Deborah Baker",
-    price: "31.65",
+    title: "La insoportable levedad del ser",
+    totalOpinions: 5,
+    author: "Milan Kundera",
+    price: "51.65",
   },
 ];

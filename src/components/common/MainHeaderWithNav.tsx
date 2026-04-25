@@ -3,6 +3,7 @@ import {
   faInstagram,
   faPinterest,
   faTwitter,
+  type IconDefinition,
 } from "@fortawesome/free-brands-svg-icons";
 import Icon from "./Icon";
 import { faHeart, faUser } from "@fortawesome/free-regular-svg-icons";
@@ -14,21 +15,39 @@ import {
 } from "@fortawesome/free-solid-svg-icons";
 import logo from "../../assets/images/logo-1.svg";
 
-const HeaderIcon = ({ icon, iconClass = "text-xs" }: any) => {
+const HeaderIcon = ({
+  icon,
+  iconClass = "text-xs",
+}: {
+  icon: IconDefinition;
+  iconClass?: string;
+}) => {
   return (
     <div className="size-6">
       <Icon
         icon={icon}
-        className={"text-black hover:text-primary transition " + iconClass}
+        className={
+          "text-black hover:text-primary hover:cursor-pointer transition " +
+          iconClass
+        }
       ></Icon>
     </div>
   );
 };
 
-const NavItem = ({ name, showArrowDown = true }: any) => {
+const NavItem = ({
+  name,
+  showArrowDown = true,
+}: {
+  name: string;
+  showArrowDown?: boolean;
+}) => {
   return (
-    <li className="py-9 px-5">
-      <a href="#" className="text-black hover:text-primary transition">
+    <li className="py-8 px-3 xl:py-9 min-[1150px]:px-5">
+      <a
+        href="#"
+        className="text-black hover:text-primary hover:cursor-pointer transition"
+      >
         {name}{" "}
         {showArrowDown && (
           <Icon icon={faChevronDown} className="ml-1.5 mb-0.75 text-[8px]" />
@@ -43,7 +62,7 @@ const MainHeaderWithNav = () => (
     <div className="text-xs border-b border-border">
       <div className="max-w-7xl mx-auto px-4 md:px-7.5 py-2.5 flex justify-between">
         <div className="flex flex-1 flex-row gap-8 font-bold ">
-          <span className="underline text-black hover:text-primary-hover">
+          <span className="underline text-black hover:text-primary-hover hover:cursor-pointer">
             Find a Book Store
           </span>
           <span className="text-black">+1 840 - 841 25 69</span>
@@ -66,7 +85,7 @@ const MainHeaderWithNav = () => (
           />
         </button>
 
-        <img src={logo} alt="logo" />
+        <img src={logo} alt="logo" className="hover:cursor-pointer" />
       </div>
 
       <ul className="font-semibold hidden lg:flex">

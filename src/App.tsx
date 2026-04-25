@@ -2,6 +2,8 @@ import { MainFooter, MainNav } from "./components/common";
 import {
   Banner,
   BooksStatistics,
+  FavoriteReads,
+  FeaturedAuthor,
   FeaturedBooks,
   Info,
 } from "./components/home";
@@ -14,6 +16,9 @@ function App() {
         <Banner />
         <Info />
         <FeaturedBooks />
+        <FeaturedAuthor />
+        <FavoriteReads />
+        {/* falta: Opiniones, ShopByCategory, joinThecommunity*/}
         <BooksStatistics />
       </main>
       <MainFooter />
