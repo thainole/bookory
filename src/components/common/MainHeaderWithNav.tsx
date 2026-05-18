@@ -13,7 +13,7 @@ import {
   faChevronDown,
   faMagnifyingGlass,
 } from "@fortawesome/free-solid-svg-icons";
-import logo from "../../assets/images/logo-1.svg";
+import logo from "/images/logo-1.svg";
 
 const HeaderIcon = ({
   icon,
@@ -23,7 +23,7 @@ const HeaderIcon = ({
   iconClass?: string;
 }) => {
   return (
-    <div className="size-6">
+    <div className="size-4 sm:size-6">
       <Icon
         icon={icon}
         className={
@@ -62,10 +62,10 @@ const MainHeaderWithNav = () => (
     <div className="text-xs border-b border-border">
       <div className="max-w-7xl mx-auto px-4 md:px-7.5 py-2.5 flex justify-between">
         <div className="flex flex-1 flex-row gap-8 font-bold ">
-          <span className="underline text-black hover:text-primary-hover hover:cursor-pointer">
-            Find a Book Store
+          <span className="underline text-black hover:text-primary-hover hover:cursor-pointer transition">
+            Encontrar una librería
           </span>
-          <span className="text-black">+1 840 - 841 25 69</span>
+          <span className="text-black"> +(01) 713-505</span>
         </div>
         <div className="flex flex-row flex-1 gap-3.5 justify-end">
           <HeaderIcon icon={faFacebook} />
@@ -89,12 +89,12 @@ const MainHeaderWithNav = () => (
       </div>
 
       <ul className="font-semibold hidden lg:flex">
-        <NavItem name="Home" />
-        <NavItem name="Shop" />
-        <NavItem name="Vendor" />
-        <NavItem name="Pages" />
+        <NavItem name="Inicio" />
+        <NavItem name="Libros" />
+        <NavItem name="Autores" />
+        <NavItem name="Explorar" />
         <NavItem name="Blog" />
-        <NavItem name="Contact" showArrowDown={false} />
+        <NavItem name="Contacto" showArrowDown={false} />
       </ul>
 
       <div className="flex gap-1 md:gap-3.5">

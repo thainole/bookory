@@ -79,4 +79,32 @@
   .swiper-slide-active .image-wrapper img {
     max-height: 260px;
   }
+
+  .featured-books-swiper .swiper-pagination {
+    margin-top: 40px;
+    position: relative;
+  }
+
+  .featured-books-swiper .swiper-pagination-bullet {
+    width: 20px !important;
+    height: 3px !important;
+    border-radius: 999px !important;
+    background-color: #ddd !important;
+    opacity: 1 !important;
+    transition: all 0.3s ease !important;
+    margin: 0 4px !important;
+  }
+
+  .featured-books-swiper .swiper-pagination-bullet-active {
+    width: 40px !important;
+    background-color: #f65d4e !important;
+  }
+
+  .featured-books-swiper .swiper-pagination-bullet {
+    background-color: #e6e6e6 !important;
+  }
+
+  .featured-books-swiper .swiper-pagination-bullet-active {
+    background-color: #000 !important;
+  }
 }

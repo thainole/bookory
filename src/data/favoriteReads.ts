@@ -1,20 +1,10 @@
-import book1 from "../assets/images/books/crimen-y-castigo.jpg";
-import book2 from "../assets/images/books/corazon-tan-blanco.jpg";
-import book3 from "../assets/images/books/cien-años-de-soledad.jpg";
-import book4 from "../assets/images/books/noches-blancas.jpg";
-import book5 from "../assets/images/books/rayuela.jpg";
-import book6 from "../assets/images/books/carta-al-padre.jpg";
-import book7 from "../assets/images/books/la-insoportable-levedad-del-ser.jpg";
-import book8 from "../assets/images/books/gente-normal.jpg";
-import book9 from "../assets/images/books/orgullo-y-prejuicio.jpg";
-
 export const favoriteReads = [
   {
     id: 1,
     title: "Crimen y castigo",
     author: "Fiódor Dostoievski",
     price: "52.90",
-    image: book1,
+    image: "crimen-y-castigo.jpg",
     totalOpinions: 10,
   },
   {
@@ -22,7 +12,7 @@ export const favoriteReads = [
     title: "Corazón tan blanco",
     author: "Javier Marías",
     price: "70.05",
-    image: book2,
+    image: "corazon-tan-blanco.jpg",
     totalOpinions: 4,
   },
   {
@@ -30,7 +20,7 @@ export const favoriteReads = [
     title: "Cien años de soledad",
     author: "Gabriel García Márquez",
     price: "82.85",
-    image: book3,
+    image: "cien-anos-de-soledad.jpg",
     totalOpinions: 5,
   },
   {
@@ -38,7 +28,7 @@ export const favoriteReads = [
     title: "Noches blancas",
     author: "Fiódor Dostoievski",
     price: "49.99",
-    image: book4,
+    image: "noches-blancas.jpg",
     totalOpinions: 5,
   },
   {
@@ -46,7 +36,7 @@ export const favoriteReads = [
     title: "Rayuela",
     author: "Julio Cortázar",
     price: "55.20",
-    image: book5,
+    image: "rayuela.jpg",
     totalOpinions: 7,
   },
   {
@@ -54,7 +44,7 @@ export const favoriteReads = [
     title: "Carta al padre",
     author: "Franz Kafka",
     price: "50.89",
-    image: book6,
+    image: "carta-al-padre.jpg",
     totalOpinions: 4,
   },
   {
@@ -62,7 +52,7 @@ export const favoriteReads = [
     title: "La insoportable levedad del ser",
     author: "Milan Kundera",
     price: "51.65",
-    image: book7,
+    image: "la-insoportable-levedad-del-ser.jpg",
     totalOpinions: 5,
   },
   {
@@ -70,7 +60,7 @@ export const favoriteReads = [
     title: "Gente normal",
     author: "Sally Rooney",
     price: "48.90",
-    image: book8,
+    image: "gente-normal.jpg",
     totalOpinions: 6,
   },
   {
@@ -78,7 +68,7 @@ export const favoriteReads = [
     title: "Orgullo y prejuicio",
     author: "Jane Austen",
     price: "66.50",
-    image: book9,
+    image: "orgullo-y-prejuicio.jpg",
     totalOpinions: 11,
   },
 ];

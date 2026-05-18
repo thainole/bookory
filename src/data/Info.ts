@@ -1,7 +1,7 @@
-import Info1 from "../assets/images/Home04_imb.jpg";
-import Info2 from "../assets/images/Home04_imb1.jpg";
-import Info3 from "../assets/images/Home04_imb2.jpg";
-import Info4 from "../assets/images/Home04_imb3.jpg";
+import Info1 from "/images/Home04_imb.jpg";
+import Info2 from "/images/Home04_imb1.jpg";
+import Info3 from "/images/Home04_imb2.jpg";
+import Info4 from "/images/Home04_imb3.jpg";
 
 export const infoData = [
   {

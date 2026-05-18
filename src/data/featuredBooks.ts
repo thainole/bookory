@@ -1,14 +1,7 @@
-import book1 from "../assets/images/books/noches-blancas.jpg";
-import book2 from "../assets/images/books/pizarnik.jpg";
-import book3 from "../assets/images/books/cien-años-de-soledad.jpg";
-import book4 from "../assets/images/books/corazon-tan-blanco.jpg";
-import book5 from "../assets/images/books/carta-al-padre.jpg";
-import book6 from "../assets/images/books/la-insoportable-levedad-del-ser.jpg";
-
 export const featuredBooks = [
   {
     id: 1,
-    image: book1,
+    image: "noches-blancas.jpg",
     title: "Noches blancas",
     totalOpinions: 5,
     author: "Fiódor Dostoievski",
@@ -16,7 +9,7 @@ export const featuredBooks = [
   },
   {
     id: 2,
-    image: book2,
+    image: "pizarnik.jpg",
     title: "Diarios",
     totalOpinions: 4,
     author: "Alejandra Pizárnik",
@@ -24,7 +17,7 @@ export const featuredBooks = [
   },
   {
     id: 3,
-    image: book3,
+    image: "cien-anos-de-soledad.jpg",
     title: "Cien años de soledad",
     totalOpinions: 5,
     author: "Gabriel García Márquez",
@@ -32,7 +25,7 @@ export const featuredBooks = [
   },
   {
     id: 4,
-    image: book4,
+    image: "corazon-tan-blanco.jpg",
     title: "Corazón tan blanco",
     totalOpinions: 4,
     author: "Javier Marías",
@@ -40,7 +33,7 @@ export const featuredBooks = [
   },
   {
     id: 5,
-    image: book5,
+    image: "carta-al-padre.jpg",
     title: "Carta al padre",
     totalOpinions: 4,
     author: "Franz Kafka",
@@ -48,10 +41,34 @@ export const featuredBooks = [
   },
   {
     id: 6,
-    image: book6,
+    image: "la-insoportable-levedad-del-ser.jpg",
     title: "La insoportable levedad del ser",
     totalOpinions: 5,
     author: "Milan Kundera",
     price: "51.65",
+  },
+  {
+    id: 7,
+    image: "ya-nadie-escribe-cartas.jpg",
+    title: "Ya nadie escribe cartas",
+    totalOpinions: 4,
+    author: "Jang Eun-jin",
+    price: "49.90",
+  },
+  {
+    id: 8,
+    image: "libro-del-desasosiego.jpg",
+    title: "Libro del desasosiego",
+    totalOpinions: 9,
+    author: "Fernando Pessoa",
+    price: "109.90",
+  },
+  {
+    id: 9,
+    title: "Orgullo y prejuicio",
+    author: "Jane Austen",
+    price: "66.50",
+    image: "orgullo-y-prejuicio.jpg",
+    totalOpinions: 11,
   },
 ];

@@ -1,14 +1,8 @@
 import { faStar } from "@fortawesome/free-regular-svg-icons";
 import { faStar as solidStar } from "@fortawesome/free-solid-svg-icons";
 import Icon from "./Icon";
-
-interface Book {
-  title: string;
-  author: string;
-  image: string;
-  totalOpinions: number;
-  price: string;
-}
+import type { Book } from "../../types";
+import { SERVICE_URL } from "../../utils/constants";
 
 const BookCard = ({
   book,
@@ -23,14 +17,18 @@ const BookCard = ({
     <div className={`flex flex-col h-full ${className}`}>
       <div className="image-wrapper" style={imgStyle}>
         <img
-          src={book.image}
+          src={`${SERVICE_URL}/${book.image}`}
           alt={book.title}
+          title={book.title}
           className="rounded-xl lg:rounded-2xl hover:cursor-pointer"
         />
       </div>
 
       <div className="content flex flex-col flex-1">
-        <h3 className="font-semibold truncate hover:text-primary hover:cursor-pointer transition mb-1.5">
+        <h3
+          title={book.title}
+          className="font-semibold truncate hover:text-primary hover:cursor-pointer transition mb-1.5"
+        >
           {book.title}
         </h3>
         <p className="text-lighter text-xs hover:text-primary hover:cursor-pointer mb-2 truncate">

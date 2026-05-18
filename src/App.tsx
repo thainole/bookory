@@ -6,6 +6,7 @@ import {
   FeaturedAuthor,
   FeaturedBooks,
   Info,
+  ThaiFavoriteReads,
 } from "./components/home";
 
 function App() {
@@ -18,6 +19,7 @@ function App() {
         <FeaturedBooks />
         <FeaturedAuthor />
         <FavoriteReads />
+        <ThaiFavoriteReads />
         {/* falta: Opiniones, ShopByCategory, joinThecommunity*/}
         <BooksStatistics />
       </main>

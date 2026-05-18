@@ -20,11 +20,11 @@ const FeaturedAuthor = () => {
             <Button>Ver más</Button>
           </div>
 
-          <div className="grid-cols-1">
-            <img src={featuredAuthor.image} />
+          <div className="grid-cols-1 grid place-items-center sm:inline-block">
+            <img src={`/images/${featuredAuthor.image}`} />
           </div>
 
-          <div className="grid grid-cols-2 sm:grid-cols-4 lg:grid-cols-2 sm:col-span-2 lg:col-span-1 gap-7.5">
+          <div className="grid grid-cols-2 place-items-center sm:grid-cols-4 sm:place-items-stretch lg:grid-cols-2 sm:col-span-2 lg:col-span-1 gap-7.5">
             {featuredAuthor.books.map((book) => (
               <BookCard
                 book={book}

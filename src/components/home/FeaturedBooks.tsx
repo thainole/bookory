@@ -1,5 +1,5 @@
 import { Swiper, SwiperSlide } from "swiper/react";
-import { Autoplay } from "swiper/modules";
+import { Autoplay, Pagination } from "swiper/modules";
 import { featuredBooks } from "../../data";
 import { BookCard, Container } from "../common";
 
@@ -8,19 +8,19 @@ import "swiper/css";
 import "swiper/css/navigation";
 import "swiper/css/pagination";
 
-const booksToShow = [...featuredBooks, ...featuredBooks];
-
 const FeaturedBooks = () => (
   <section>
-    <Container className="py-17.5 bg-[#FFF8F2]">
-      <h2 className="mb-20 text-center">Libros destacados</h2>
+    <Container className="pt-17.5 pb-8 bg-[#FFF8F2]">
+      <h2 className="mb-16 text-center">Libros destacados</h2>
       <Swiper
+        className="featured-books-swiper pb-15.5!"
         slidesPerView={5}
-        modules={[Autoplay]}
+        modules={[Autoplay, Pagination]}
         speed={800}
         centeredSlides={true}
         autoplay={{ delay: 4000, disableOnInteraction: false }}
         loop={true}
+        pagination={{ clickable: true }}
         breakpoints={{
           0: {
             slidesPerView: 2,
@@ -40,7 +40,7 @@ const FeaturedBooks = () => (
           },
         }}
       >
-        {booksToShow.map((item, index) => (
+        {featuredBooks.map((item, index) => (
           <SwiperSlide key={`books-${item.id}-${index}`}>
             <BookCard book={item} />
           </SwiperSlide>

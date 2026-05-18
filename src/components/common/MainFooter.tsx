@@ -1,5 +1,5 @@
-import cards from "../../assets/images/footer_img.png";
-import logo from "../../assets/images/logo.svg";
+import cards from "/images/footer_img.png";
+import logo from "/images/logo.svg";
 import Container from "./Container";
 
 const MainFooter = () => (
@@ -9,7 +9,7 @@ const MainFooter = () => (
         <div className="flex flex-col gap-3.5 md:gap-7.5 pr-7">
           <img src={logo} alt="Bookory" className="w-37.5" />
           <span className="footer-text-sm leading-7.5">
-            Bolognesi 510
+            Bolognesi 510,
             <br />
             Miraflores 15074
           </span>
@@ -31,7 +31,7 @@ const MainFooter = () => (
                 Viernes y Sábados: 10:00 – 22:00
               </span>
             </div>
-            <span className="text-white font-light text-[18px] mt-1 break-all">
+            <span className="text-white font-light text-base md:text-[18px] mt-1 break-all">
               bookory-libreria@gmail.com
             </span>
           </div>

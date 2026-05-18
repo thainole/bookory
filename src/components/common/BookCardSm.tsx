@@ -1,6 +1,7 @@
 import { faStar } from "@fortawesome/free-regular-svg-icons";
 import { faStar as solidStar } from "@fortawesome/free-solid-svg-icons";
 import Icon from "./Icon";
+import { SERVICE_URL } from "../../utils/constants";
 
 interface Book {
   title: string;
@@ -12,17 +13,21 @@ interface Book {
 
 const BookCardSm = ({ book }: { book: Book }) => {
   return (
-    <div className="flex h-full gap-x-5 md:gap-x-7.5">
+    <div className="flex h-full gap-x-3 sm:gap-x-5 md:gap-x-7.5">
       <div className="w-20">
         <img
-          src={book.image}
+          src={`${SERVICE_URL}/${book.image}`}
           alt={book.title}
           className="rounded-lg lg:rounded-xl hover:cursor-pointer w-20"
+          title={book.title}
         />
       </div>
 
       <div className="content flex flex-col flex-1 truncate justify-between">
-        <h3 className="font-semibold truncate hover:text-primary hover:cursor-pointer transition">
+        <h3
+          title={book.title}
+          className="font-semibold truncate hover:text-primary hover:cursor-pointer transition"
+        >
           {book.title}
         </h3>
         <p className="text-lighter text-xs hover:cursor-pointer truncate hover:text-primary">

@@ -1,6 +1,6 @@
 import { Icon } from "../common";
-import bgBooks from "../../assets/images/revslider_decor-1.png";
-import books from "../../assets/images/pile-of-books.png";
+import bgBooks from "/images/revslider_decor-1.png";
+import books from "/images/pile-of-books.png";
 import { faChevronRight } from "@fortawesome/free-solid-svg-icons";
 
 const Banner = () => (
