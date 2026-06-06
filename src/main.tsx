@@ -6,7 +6,7 @@ import { ReactQueryDevtools } from "@tanstack/react-query-devtools";
 
 import "./index.css";
 import App from "./App.tsx";
-import { LoadingSection } from "./common";
+import { LoadingSection } from "./shared/components/index.ts";
 
 const queryClient = new QueryClient({
   defaultOptions: {
@@ -59,6 +59,18 @@ const router = createBrowserRouter([
         path: "contacto",
         lazy: async () => ({
           Component: (await import("./pages/Contact.tsx")).default,
+        }),
+      },
+      // {
+      //   path: "productodetalle/:idproducto",
+      //   lazy: async () => ({
+      //     Component: (await import("./pages/productodetalle")).default,
+      //   }),
+      // },
+      {
+        path: "*",
+        lazy: async () => ({
+          Component: (await import("./pages/Page404.tsx")).default,
         }),
       },
     ],

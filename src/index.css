@@ -111,4 +111,20 @@
   .featured-books-swiper .swiper-pagination-bullet-active {
     background-color: #000 !important;
   }
+
+  .error-404 h1 {
+    font-size: 120px;
+    line-height: 100%;
+  }
+  @media (min-width: 768px) {
+    .error-404 h1 {
+      font-size: 160px;
+    }
+  }
+  .error-404 .page-content {
+    background-image: url(/images/404.png);
+    background-repeat: no-repeat;
+    background-position: center;
+    text-align: center;
+  }
 }
