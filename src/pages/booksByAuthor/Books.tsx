@@ -1,5 +1,9 @@
-import { BookCard, ErrorSection, LoadingSection } from "../../common";
-import { useBooks } from "../../hooks";
+import {
+  BookCard,
+  ErrorSection,
+  LoadingSection,
+} from "../../shared/components";
+import { useBooks } from "../../shared/hooks";
 
 const Books = ({ authorId }: { authorId: string | number }) => {
   const { data, loading, error, hasData } = useBooks(authorId);

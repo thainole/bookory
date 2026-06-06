@@ -4,8 +4,8 @@ import {
   Container,
   ErrorSection,
   LoadingSection,
-} from "../../../common";
-import { useFavoriteBooks } from "../../../hooks";
+} from "../../../shared/components";
+import { useFavoriteBooks } from "../useFavoriteBooks";
 
 const FavoriteReads = () => {
   const { data, loading, error, hasData } = useFavoriteBooks();

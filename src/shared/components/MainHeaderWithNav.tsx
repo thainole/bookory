@@ -16,7 +16,7 @@ import {
   faXmark,
 } from "@fortawesome/free-solid-svg-icons";
 import logo from "/images/logo-1.svg";
-import { NAV_ITEMS } from "../data";
+import { NAV_ITEMS } from "../../data";
 import { useState } from "react";
 import { NavLink } from "react-router-dom";
 

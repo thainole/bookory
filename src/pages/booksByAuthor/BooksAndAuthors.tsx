@@ -1,6 +1,10 @@
-import { Container, ErrorSection, LoadingSection } from "../../common";
-import { useAuthors } from "../../hooks";
+import {
+  Container,
+  ErrorSection,
+  LoadingSection,
+} from "../../shared/components";
 import Books from "./Books";
+import { useAuthors } from "./useAuthors";
 
 const BooksAndAuthors = () => {
   const { data, loading, error, hasData, selectAuthor, selectedAuthor } =

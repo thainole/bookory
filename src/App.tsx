@@ -1,5 +1,5 @@
 import { Outlet } from "react-router-dom";
-import { MainFooter, MainNav } from "./common";
+import { MainFooter, MainNav } from "./shared/components";
 
 function App() {
   return (

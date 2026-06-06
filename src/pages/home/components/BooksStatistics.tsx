@@ -1,5 +1,5 @@
 import { bookstoreStatistics } from "../../../data";
-import { Container, Icon } from "../../../common";
+import { Container, Icon } from "../../../shared/components";
 
 const BooksStatistics = () => (
   <section className="mt-30 mb-20">

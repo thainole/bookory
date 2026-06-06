@@ -5,13 +5,13 @@ import {
   Container,
   ErrorSection,
   LoadingSection,
-} from "../../../common";
+} from "../../../shared/components";
 
 // Import Swiper styles
 import "swiper/css";
 import "swiper/css/navigation";
 import "swiper/css/pagination";
-import { useFeaturedBooks } from "../../../hooks";
+import { useFeaturedBooks } from "../useFeaturedBooks";
 
 const FeaturedBooks = () => {
   const { data, loading, error, hasData } = useFeaturedBooks();

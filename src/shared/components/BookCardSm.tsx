@@ -1,8 +1,8 @@
 import { faStar } from "@fortawesome/free-regular-svg-icons";
 import { faStar as solidStar } from "@fortawesome/free-solid-svg-icons";
 import Icon from "./Icon";
-import { SERVICE_URL } from "../utils/constants";
-import type { Book } from "../types";
+import { SERVICE_URL } from "../../utils/constants";
+import type { Book } from "../../types";
 
 const BookCardSm = ({ book }: { book: Book }) => {
   return (

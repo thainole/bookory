@@ -1,4 +1,4 @@
-import { SubPageHeader } from "../../common";
+import { SubPageHeader } from "../../shared/components";
 import BooksAndAuthors from "./BooksAndAuthors";
 
 const BooksByAuthor = () => {

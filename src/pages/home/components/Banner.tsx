@@ -1,4 +1,4 @@
-import { Icon } from "../../../common";
+import { Icon } from "../../../shared/components";
 import bgBooks from "/images/revslider_decor-1.png";
 import books from "/images/pile-of-books.png";
 import { faChevronRight } from "@fortawesome/free-solid-svg-icons";

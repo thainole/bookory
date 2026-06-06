@@ -1,10 +1,10 @@
 import { useQuery } from "@tanstack/react-query";
-import { fetchFeaturedBooks } from "../services";
+import { fetchBooks } from "../../services";
 
-export const useFeaturedBooks = () => {
+export const useBooks = (authorId?: number | string) => {
   const { data, isLoading, error } = useQuery({
-    queryKey: ["featured"],
-    queryFn: ({ signal }) => fetchFeaturedBooks(signal),
+    queryKey: ["booksbyauthor", authorId],
+    queryFn: ({ signal }) => fetchBooks(authorId, signal),
   });
 
   return {

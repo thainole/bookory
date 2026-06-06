@@ -4,8 +4,8 @@ import {
   Container,
   ErrorSection,
   LoadingSection,
-} from "../../../common";
-import { useBooks } from "../../../hooks";
+} from "../../../shared/components";
+import { useBooks } from "../../../shared/hooks";
 
 const FeaturedAuthor = () => {
   const { data, loading, error, hasData } = useBooks(2);
@@ -42,7 +42,7 @@ const FeaturedAuthor = () => {
           </div>
 
           <div className="grid-cols-1 grid place-items-center sm:inline-block">
-            <img src="/images/javier-marias.jpg" />
+            <img src="/images/javier-marias.jpg" className="rounded-[14px]" />
           </div>
 
           {loading ? (

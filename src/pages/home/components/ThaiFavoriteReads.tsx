@@ -1,6 +1,10 @@
 import { SERVICE_URL } from "../../../utils/constants";
-import { Container, ErrorSection, LoadingSection } from "../../../common";
-import { useBooks } from "../../../hooks";
+import {
+  Container,
+  ErrorSection,
+  LoadingSection,
+} from "../../../shared/components";
+import { useBooks } from "../../../shared/hooks";
 
 const ThaiFavoriteReads = () => {
   const { data, loading, error, hasData } = useBooks();

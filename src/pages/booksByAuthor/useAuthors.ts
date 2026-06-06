@@ -1,6 +1,6 @@
 import { useQuery } from "@tanstack/react-query";
-import { fetchAuthors } from "../services";
-import type { Author } from "../types";
+import { fetchAuthors } from "../../services";
+import type { Author } from "../../types";
 import { useState } from "react";
 
 export const useAuthors = () => {

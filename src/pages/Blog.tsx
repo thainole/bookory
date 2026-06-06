@@ -1,4 +1,4 @@
-import { Container, SubPageHeader } from "../common";
+import { Container, SubPageHeader } from "../shared/components";
 
 const Blog = () => {
   return (

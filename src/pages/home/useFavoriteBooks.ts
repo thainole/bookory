@@ -1,5 +1,5 @@
 import { useQuery } from "@tanstack/react-query";
-import { fetchFavoriteBooks } from "../services";
+import { fetchFavoriteBooks } from "../../services";
 
 export const useFavoriteBooks = () => {
   const { data, isLoading, error } = useQuery({

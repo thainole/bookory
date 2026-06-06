@@ -1,4 +1,4 @@
-import { Container } from "../../../common";
+import { Container } from "../../../shared/components";
 import { infoData } from "../../../data";
 
 const Info = () => {

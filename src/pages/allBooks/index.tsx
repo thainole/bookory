@@ -4,8 +4,8 @@ import {
   ErrorSection,
   LoadingSection,
   SubPageHeader,
-} from "../../common";
-import { useBooks } from "../../hooks";
+} from "../../shared/components";
+import { useBooks } from "../../shared/hooks";
 
 const AllBooks = () => {
   const { data, loading, error, hasData } = useBooks();
