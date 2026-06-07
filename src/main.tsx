@@ -61,12 +61,12 @@ const router = createBrowserRouter([
           Component: (await import("./pages/Contact.tsx")).default,
         }),
       },
-      // {
-      //   path: "productodetalle/:idproducto",
-      //   lazy: async () => ({
-      //     Component: (await import("./pages/productodetalle")).default,
-      //   }),
-      // },
+      {
+        path: "detalle-libro/:bookId",
+        lazy: async () => ({
+          Component: (await import("./pages/book")).default,
+        }),
+      },
       {
         path: "*",
         lazy: async () => ({

@@ -2,7 +2,8 @@ import { faStar } from "@fortawesome/free-regular-svg-icons";
 import { faStar as solidStar } from "@fortawesome/free-solid-svg-icons";
 import Icon from "./Icon";
 import type { Book } from "../../types";
-import { SERVICE_URL } from "../../utils/constants";
+import { CONFIG } from "../../config";
+import { Link } from "react-router-dom";
 
 const BookCard = ({
   book,
@@ -16,21 +17,25 @@ const BookCard = ({
   return (
     <div className={`flex flex-col h-full ${className}`}>
       <div className="image-wrapper" style={imgStyle}>
-        <img
-          src={`${SERVICE_URL}/${book.image}`}
-          alt={book.title}
-          title={book.title}
-          className="rounded-xl lg:rounded-2xl hover:cursor-pointer"
-        />
+        <Link to={`/detalle-libro/${book.id}`}>
+          <img
+            src={`${CONFIG.API_URL}/${book.image}`}
+            alt={book.title}
+            title={book.title}
+            className="rounded-xl lg:rounded-2xl hover:cursor-pointer"
+          />
+        </Link>
       </div>
 
       <div className="content flex flex-col flex-1">
-        <h3
-          title={book.title}
-          className="font-semibold truncate hover:text-primary hover:cursor-pointer transition mb-1.5"
-        >
-          {book.title}
-        </h3>
+        <Link to={`/detalle-libro/${book.id}`}>
+          <h3
+            title={book.title}
+            className="font-semibold truncate hover:text-primary hover:cursor-pointer transition mb-1.5"
+          >
+            {book.title}
+          </h3>
+        </Link>
         <p className="text-lighter text-xs hover:text-primary hover:cursor-pointer mb-2 truncate">
           {book.author}
         </p>

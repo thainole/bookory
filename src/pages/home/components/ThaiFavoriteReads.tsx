@@ -1,4 +1,4 @@
-import { SERVICE_URL } from "../../../utils/constants";
+import { CONFIG } from "../../../config";
 import {
   Container,
   ErrorSection,
@@ -42,7 +42,7 @@ const ThaiFavoriteReads = () => {
                     <tr key={book.id} className="border-t">
                       <td className="px-3 py-2 flex items-center gap-3">
                         <img
-                          src={`${SERVICE_URL}/${book.image}`}
+                          src={`${CONFIG.API_URL}/${book.image}`}
                           alt={book.title}
                           className="w-12 h-16 object-cover rounded"
                         />
