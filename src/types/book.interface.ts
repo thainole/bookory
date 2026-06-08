@@ -7,4 +7,8 @@ export interface Book {
   genre: string;
   publication_year: string;
   total_reviews: number;
+  publisher: string;
+  pages: number;
+  language: string;
+  rating: number;
 }

@@ -8,6 +8,8 @@ import BookCardSm from "./BookCardSm";
 import LoadingSection from "./LoadingSection";
 import ErrorSection from "./ErrorSection";
 import SubPageHeader from "./SubPageHeader";
+import MovingImg from "./MovingImg";
+import RatingStars from "./RatingStars";
 
 export {
   Button,
@@ -20,4 +22,6 @@ export {
   LoadingSection,
   ErrorSection,
   SubPageHeader,
+  MovingImg,
+  RatingStars,
 };

@@ -62,6 +62,12 @@ const router = createBrowserRouter([
         }),
       },
       {
+        path: "carrito",
+        lazy: async () => ({
+          Component: (await import("./pages/cart")).default,
+        }),
+      },
+      {
         path: "detalle-libro/:bookId",
         lazy: async () => ({
           Component: (await import("./pages/book")).default,

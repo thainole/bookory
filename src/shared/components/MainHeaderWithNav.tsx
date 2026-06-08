@@ -18,25 +18,30 @@ import {
 import logo from "/images/logo-1.svg";
 import { NAV_ITEMS } from "../../data";
 import { useState } from "react";
-import { NavLink } from "react-router-dom";
+import { Link, NavLink } from "react-router-dom";
 
 const HeaderIcon = ({
   icon,
+  linkTo = undefined,
   iconClass = "text-xs",
 }: {
   icon: IconDefinition;
+  linkTo?: string;
   iconClass?: string;
 }) => {
-  return (
-    <div className="size-4 sm:size-6">
-      <Icon
-        icon={icon}
-        className={
-          "text-black hover:text-primary hover:cursor-pointer transition " +
-          iconClass
-        }
-      ></Icon>
-    </div>
+  const content = (
+    <Icon
+      icon={icon}
+      className={`text-black hover:text-primary hover:cursor-pointer transition ${iconClass}`}
+    />
+  );
+
+  return linkTo ? (
+    <Link to={linkTo} className="size-4 sm:size-6">
+      {content}
+    </Link>
+  ) : (
+    <div className="size-4 sm:size-6">{content}</div>
   );
 };
 
@@ -104,14 +109,18 @@ const MainHeaderWithNav = () => {
             ))}
           </ul>
 
-          <div className="flex gap-1 md:gap-3.5">
+          <div className="flex gap-2 md:gap-3.5">
             <HeaderIcon icon={faMagnifyingGlass} iconClass="text-base" />
             <div className="bg-border w-px h-6"></div>
             <HeaderIcon icon={faUser} iconClass="text-base" />
             <div className="bg-border w-px h-6"></div>
             <HeaderIcon icon={faHeart} iconClass="text-base" />
             <div className="bg-border w-px h-6"></div>
-            <HeaderIcon icon={faBasketShopping} iconClass="text-base" />
+            <HeaderIcon
+              icon={faBasketShopping}
+              linkTo="/carrito"
+              iconClass="text-base"
+            />
           </div>
         </div>
         {isOpen && (
