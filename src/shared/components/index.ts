@@ -10,6 +10,7 @@ import ErrorSection from "./ErrorSection";
 import SubPageHeader from "./SubPageHeader";
 import MovingImg from "./MovingImg";
 import RatingStars from "./RatingStars";
+import Toast from "./Toast";
 
 export {
   Button,
@@ -24,4 +25,5 @@ export {
   SubPageHeader,
   MovingImg,
   RatingStars,
+  Toast,
 };
