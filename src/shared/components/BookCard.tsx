@@ -79,7 +79,7 @@ const BookCard = ({
           </div>
 
           <span className="text-primary text-xl font-semibold mt-px">
-            ${book.price}
+            S/. {book.price}
           </span>
         </div>
       </div>

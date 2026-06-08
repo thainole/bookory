@@ -67,7 +67,7 @@ const ThaiFavoriteReads = () => {
                       </td>
 
                       <td className="px-3 py-2 font-semibold text-primary">
-                        ${book.price}
+                        S/. {book.price}
                       </td>
 
                       <td className="px-3 py-2 hidden md:table-cell text-center">

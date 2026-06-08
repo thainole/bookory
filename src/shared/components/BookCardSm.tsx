@@ -71,7 +71,7 @@ const BookCardSm = ({ book }: { book: Book }) => {
           </div>
 
           <span className="text-primary text-xl font-semibold">
-            ${book.price}
+            S/. {book.price}
           </span>
         </div>
       </div>
