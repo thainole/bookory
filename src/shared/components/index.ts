@@ -11,6 +11,7 @@ import SubPageHeader from "./SubPageHeader";
 import MovingImg from "./MovingImg";
 import RatingStars from "./RatingStars";
 import Toast from "./Toast";
+import CloseButton from "./CloseButton";
 
 export {
   Button,
@@ -26,4 +27,5 @@ export {
   MovingImg,
   RatingStars,
   Toast,
+  CloseButton,
 };

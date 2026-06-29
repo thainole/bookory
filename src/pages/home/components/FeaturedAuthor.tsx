@@ -38,7 +38,7 @@ const FeaturedAuthor = () => {
               de la narrativa en lengua española.
             </p>
 
-            <Button>Ver más</Button>
+            <Button text="Ver más"></Button>
           </div>
 
           <div className="grid-cols-1 grid place-items-center sm:inline-block">

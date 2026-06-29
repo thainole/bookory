@@ -1,12 +1,13 @@
 import { useState, type MouseEvent } from "react";
 import { Link } from "react-router-dom";
-import { faBasketShopping } from "@fortawesome/free-solid-svg-icons";
+import { faBasketShopping, faEye } from "@fortawesome/free-solid-svg-icons";
 import type { Book } from "../../types";
 import { CONFIG } from "../../config";
 import RatingStars from "./RatingStars";
 import Icon from "./Icon";
 import { handleAddToCart } from "../../utils/functions";
 import Toast from "./Toast";
+import BookDetailsModal from "./BookDetailsModal";
 
 const BookCard = ({
   book,
@@ -18,6 +19,7 @@ const BookCard = ({
   className?: string;
 }) => {
   const [toast, setToast] = useState("");
+  const [openDetails, setOpenDetails] = useState(false);
 
   const addToCart = (e: MouseEvent<HTMLButtonElement>) => {
     e.preventDefault();
@@ -30,6 +32,13 @@ const BookCard = ({
     setTimeout(() => {
       setToast("");
     }, 2500);
+  };
+
+  const onSeeDetails = (e: MouseEvent<HTMLButtonElement>) => {
+    e.preventDefault();
+    e.stopPropagation();
+
+    setOpenDetails(true);
   };
 
   return (
@@ -45,6 +54,14 @@ const BookCard = ({
                 className="rounded-xl lg:rounded-2xl group-hover:cursor-pointer"
               />
               <div className="absolute bg-black/10 rounded-xl lg:rounded-2x flex items-start justify-end pr-3 pt-3 inset-0 gap-3 opacity-0 group-hover:opacity-100 transition-opacity duration-300 z-20">
+                <button
+                  type="button"
+                  title="Ver detalles"
+                  onClick={onSeeDetails}
+                  className="flex items-center cursor-pointer justify-center w-10 h-10 rounded-full bg-white text-slate-800 hover:bg-primary hover:text-white transition-all transform translate-y-4 group-hover:translate-y-0 shadow-lg focus:ring-2 focus:ring-primary delay-75"
+                >
+                  <Icon icon={faEye} />
+                </button>
                 <button
                   type="button"
                   title="Añadir al carrito"
@@ -73,7 +90,7 @@ const BookCard = ({
 
           <div className="flex flex-row gap-1.5 items-center mb-2.5">
             <div className="flex flex-row gap-px">
-              <RatingStars bookRating={book.rating} />
+              <RatingStars rating={book.rating} />
             </div>
             <span className="text-xs font-semibold">{book.total_reviews}</span>
           </div>
@@ -84,6 +101,11 @@ const BookCard = ({
         </div>
       </div>
       {toast && <Toast message={toast} />}
+      <BookDetailsModal
+        book={book}
+        open={openDetails}
+        onClose={() => setOpenDetails(false)}
+      />
     </>
   );
 };

@@ -65,7 +65,7 @@ const BookCardSm = ({ book }: { book: Book }) => {
 
           <div className="flex flex-row gap-1.5 items-center">
             <div className="flex flex-row gap-px">
-              <RatingStars bookRating={book.rating} />
+              <RatingStars rating={book.rating} />
             </div>
             <span className="text-xs font-semibold">{book.total_reviews}</span>
           </div>

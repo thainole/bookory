@@ -1,13 +1,37 @@
-import { faChevronRight } from "@fortawesome/free-solid-svg-icons";
+import {
+  faChevronRight,
+  type IconDefinition,
+} from "@fortawesome/free-solid-svg-icons";
 import Icon from "./Icon";
 
-const Button = ({ children }: { children: React.ReactNode }) => (
-  <button className="flex self-center cursor-pointer bg-primary text-white text-sm px-5 sm:px-7.5 py-3 rounded-full hover:bg-primary-hover transition capitalize font-semibold">
-    {children}
-    <span className="hidden sm:inline-block">
-      <Icon icon={faChevronRight} className="ml-1 text-xs text-white" />
-    </span>
-  </button>
-);
+interface Props {
+  text: string;
+  icon?: IconDefinition;
+  onClick?: () => void;
+  showIcon?: boolean;
+  isInverse?: boolean;
+}
+
+const Button = ({
+  text,
+  icon = faChevronRight,
+  onClick,
+  showIcon = true,
+  isInverse = false,
+}: Props) => {
+  return (
+    <button
+      onClick={onClick}
+      className={isInverse ? "base-button-inverse" : "base-button"}
+    >
+      {text}
+      {showIcon && (
+        <span className="hidden sm:inline-block">
+          <Icon icon={icon} className="ml-1 text-xs text-white" />
+        </span>
+      )}
+    </button>
+  );
+};
 
 export default Button;

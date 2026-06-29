@@ -2,13 +2,11 @@ import { faStar } from "@fortawesome/free-regular-svg-icons";
 import { faStar as solidStar } from "@fortawesome/free-solid-svg-icons";
 import Icon from "./Icon";
 
-const RatingStars = ({ bookRating }: { bookRating: number }) => {
-  const rating = bookRating ?? 0;
-
+const RatingStars = ({ rating }: { rating: number }) => {
   const stars = Array.from({ length: 5 }).map((_, index) => (
     <Icon
       key={index}
-      icon={index < Math.round(rating) ? solidStar : faStar}
+      icon={index < Math.round(rating ?? 0) ? solidStar : faStar}
       className="text-amber-400 text-xs"
     />
   ));

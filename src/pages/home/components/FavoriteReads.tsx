@@ -18,7 +18,7 @@ const FavoriteReads = () => {
         <div className="flex justify-between flex-row items-start sm:items-center mb-5">
           <h2 className="mr-2 md:mr-12">Nuestras lecturas favoritas</h2>
           <div className="hidden sm:inline-flex flex-1 h-px bg-border mr-12"></div>
-          <Button>Comprar</Button>
+          <Button text="Comprar"></Button>
         </div>
         {loading ? (
           <LoadingSection />
