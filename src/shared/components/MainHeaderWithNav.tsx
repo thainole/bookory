@@ -1,3 +1,7 @@
+import { useNavigate } from "react-router-dom";
+import { useEffect, useRef, useState } from "react";
+import { Link, NavLink } from "react-router-dom";
+
 import {
   faFacebook,
   faInstagram,
@@ -15,19 +19,47 @@ import {
   faMagnifyingGlass,
   faXmark,
 } from "@fortawesome/free-solid-svg-icons";
+
 import logo from "/images/logo-1.svg";
 import { NAV_ITEMS } from "../../data";
-import { useState } from "react";
-import { Link, NavLink } from "react-router-dom";
+import { useAuth } from "../../context/AuthContext";
+import avatarImg from "/images/avatar.png";
+
+const LoginIcon = ({
+  onClick,
+  isAuthenticated,
+}: {
+  onClick?: () => void;
+  isAuthenticated?: boolean;
+}) => {
+  return !isAuthenticated ? (
+    <Link to="/login" className="size-4 sm:size-6" title="Iniciar sesión">
+      <Icon
+        icon={faUser}
+        className="text-black hover:text-primary hover:cursor-pointer transition text-base"
+      />
+    </Link>
+  ) : (
+    <button
+      className="size-5 sm:size-6 cursor-pointer rounded-full"
+      onClick={onClick}
+      title="Perfil"
+    >
+      <img src={avatarImg} alt="imagen de perfil" className="rounded-full" />
+    </button>
+  );
+};
 
 const HeaderIcon = ({
   icon,
   linkTo = undefined,
   iconClass = "text-xs",
+  title = "",
 }: {
   icon: IconDefinition;
   linkTo?: string;
   iconClass?: string;
+  title?: string;
 }) => {
   const content = (
     <Icon
@@ -37,7 +69,7 @@ const HeaderIcon = ({
   );
 
   return linkTo ? (
-    <Link to={linkTo} className="size-4 sm:size-6">
+    <Link to={linkTo} className="size-4 sm:size-6" title={title}>
       {content}
     </Link>
   ) : (
@@ -46,11 +78,31 @@ const HeaderIcon = ({
 };
 
 const MainHeaderWithNav = () => {
+  const navigate = useNavigate();
+  const { user, logout, isAuthenticated } = useAuth();
   const [isOpen, setIsOpen] = useState(false);
+  const [isUserInfoOpen, setIsUserInfoOpen] = useState(false);
+  const menuRef = useRef<HTMLDivElement>(null);
 
   const onToggleMenu = () => {
     setIsOpen(!isOpen);
   };
+
+  useEffect(() => {
+    const handleClickOutside = (event: MouseEvent) => {
+      if (menuRef.current && !menuRef.current.contains(event.target as Node)) {
+        setIsUserInfoOpen(false);
+      }
+    };
+
+    document.addEventListener("mousedown", handleClickOutside);
+
+    return () => document.removeEventListener("mousedown", handleClickOutside);
+  }, []);
+
+  const visibleNavItems = NAV_ITEMS.filter(
+    (item) => !item.private || isAuthenticated,
+  );
 
   return (
     <header className="border-b border-border">
@@ -90,20 +142,24 @@ const MainHeaderWithNav = () => {
           </div>
 
           <ul className="font-semibold hidden lg:flex">
-            {NAV_ITEMS.map((item) => (
-              <li className="py-8 px-3 xl:py-9 min-[1150px]:px-5" key={item.id}>
+            {visibleNavItems.map((item) => (
+              <li className="py-8 px-4 xl:py-9 lg:px-7" key={item.id}>
                 <NavLink
                   to={item.path}
                   title={item.description}
-                  className="text-black hover:text-primary hover:cursor-pointer transition"
+                  className={({ isActive }) => {
+                    return `hover:cursor-pointer transition ${
+                      isActive
+                        ? "text-primary"
+                        : "text-black hover:text-primary"
+                    }`;
+                  }}
                 >
                   {item.name}{" "}
-                  {!item.hideArrow && (
-                    <Icon
-                      icon={faChevronDown}
-                      className="ml-1.5 mb-0.75 text-[8px]"
-                    />
-                  )}
+                  <Icon
+                    icon={faChevronDown}
+                    className="ml-1.5 mb-0.75 text-[8px]"
+                  />
                 </NavLink>
               </li>
             ))}
@@ -112,7 +168,56 @@ const MainHeaderWithNav = () => {
           <div className="flex gap-2 md:gap-3.5">
             <HeaderIcon icon={faMagnifyingGlass} iconClass="text-base" />
             <div className="bg-border w-px h-6"></div>
-            <HeaderIcon icon={faUser} iconClass="text-base" />
+            <div className="relative" ref={menuRef}>
+              <LoginIcon
+                onClick={() => setIsUserInfoOpen((prev) => !prev)}
+                isAuthenticated={isAuthenticated}
+              />
+              {isUserInfoOpen && (
+                <div className="absolute -right-20 sm:-right-4 top-7 w-72 rounded-lg border border-border bg-white shadow-xl z-50 overflow-hidden">
+                  <div className="flex gap-3 px-5 py-4 border-b border-border">
+                    <img
+                      src={avatarImg}
+                      alt="imagen de perfil"
+                      className="rounded-full size-11"
+                    />
+                    <div className="">
+                      <p className="font-semibold text-black">
+                        {user?.full_name}
+                      </p>
+                      <p className="text-sm text-lighter break-all">
+                        {user?.email}
+                      </p>
+                    </div>
+                  </div>
+
+                  <div className="flex flex-col py-2">
+                    <div
+                      className="px-5 py-2 hover:text-primary transition cursor-pointer"
+                      onClick={() => {
+                        setIsUserInfoOpen(false);
+                        navigate("/perfil");
+                      }}
+                    >
+                      Mi Perfil
+                    </div>
+                  </div>
+
+                  <div className="border-t border-border">
+                    <button
+                      onClick={() => {
+                        logout();
+                        setIsUserInfoOpen(false);
+                        navigate("/login");
+                      }}
+                      className="w-full cursor-pointer text-left px-5 py-3 hover:text-primary transition"
+                    >
+                      Logout
+                    </button>
+                  </div>
+                </div>
+              )}
+            </div>
             <div className="bg-border w-px h-6"></div>
             <HeaderIcon icon={faHeart} iconClass="text-base" />
             <div className="bg-border w-px h-6"></div>
@@ -120,24 +225,29 @@ const MainHeaderWithNav = () => {
               icon={faBasketShopping}
               linkTo="/carrito"
               iconClass="text-base"
+              title="Carrito de compras"
             />
           </div>
         </div>
         {isOpen && (
           <div className="lg:hidden bg-white border-t border-border absolute w-full border animate-in slide-in-from-top duration-300">
             <ul className="flex flex-col list-none py-4">
-              {NAV_ITEMS.map((item) => (
+              {visibleNavItems.map((item) => (
                 <li key={item.id}>
                   <NavLink
                     to={item.path}
                     title={item.description}
                     onClick={() => setIsOpen(false)}
-                    className="block px-7.5 py-3 text-accent font-semibold text-sm group hover:text-primary transition"
+                    className={({ isActive }) => {
+                      return `block px-7.5 py-3 font-semibold text-sm transition ${
+                        isActive
+                          ? "text-primary!"
+                          : "text-accent hover:text-primary"
+                      }`;
+                    }}
                   >
-                    <span className="mr-2 group-hover:text-primary transition">
-                      {item.name}
-                    </span>
-                    <Icon icon={faChevronRight} />
+                    {item.name}
+                    <Icon icon={faChevronRight} className="ml-2" />
                   </NavLink>
                 </li>
               ))}

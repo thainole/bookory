@@ -1,5 +1,5 @@
 export interface OpinionForm {
-  author: string;
+  user_id?: number;
   title: string;
   opinion: string;
   rating: number;
@@ -12,4 +12,5 @@ export interface OpinionToUpdate extends OpinionForm {
 export interface Opinion extends OpinionForm {
   opinion_id: number;
   created_at: string;
+  author: string;
 }

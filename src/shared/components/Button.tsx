@@ -10,6 +10,7 @@ interface Props {
   onClick?: () => void;
   showIcon?: boolean;
   isInverse?: boolean;
+  type?: "button" | "submit";
 }
 
 const Button = ({
@@ -18,9 +19,11 @@ const Button = ({
   onClick,
   showIcon = true,
   isInverse = false,
+  type = "button",
 }: Props) => {
   return (
     <button
+      type={type}
       onClick={onClick}
       className={isInverse ? "base-button-inverse" : "base-button"}
     >

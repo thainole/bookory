@@ -3,3 +3,5 @@ export * from "./books.service";
 export * from "./favorite-books.service";
 export * from "./featured-books.service";
 export * from "./opinions.service";
+export * from "./auth.service";
+export * from "./profile.service";

@@ -12,6 +12,7 @@ import MovingImg from "./MovingImg";
 import RatingStars from "./RatingStars";
 import Toast from "./Toast";
 import CloseButton from "./CloseButton";
+import ProtectedRoute from "./ProtectedRoute";
 
 export {
   Button,
@@ -28,4 +29,5 @@ export {
   RatingStars,
   Toast,
   CloseButton,
+  ProtectedRoute,
 };

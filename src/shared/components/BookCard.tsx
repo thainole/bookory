@@ -53,7 +53,7 @@ const BookCard = ({
                 title={book.title}
                 className="rounded-xl lg:rounded-2xl group-hover:cursor-pointer"
               />
-              <div className="absolute bg-black/10 rounded-xl lg:rounded-2x flex items-start justify-end pr-3 pt-3 inset-0 gap-3 opacity-0 group-hover:opacity-100 transition-opacity duration-300 z-20">
+              <div className="absolute bg-black/25 rounded-xl lg:rounded-2x flex items-center justify-center pr-3 pt-3 inset-0 gap-3 opacity-0 group-hover:opacity-100 transition-opacity duration-300 z-20">
                 <button
                   type="button"
                   title="Ver detalles"

@@ -46,7 +46,7 @@ const AddToCart = ({ book }: { book: Book }) => {
           <Icon icon={faBasketShopping} className="mr-1.5 text-sm text-white" />
         </span>
         Agregar{" "}
-        <span className="hidden lg:inline-block text-white ml-1">
+        <span className="hidden lg:inline-block text-white ml-1 whitespace-nowrap">
           al Carrito
         </span>
       </button>

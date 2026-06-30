@@ -6,7 +6,8 @@ import { ReactQueryDevtools } from "@tanstack/react-query-devtools";
 
 import "./index.css";
 import App from "./App.tsx";
-import { LoadingSection } from "./shared/components/index.ts";
+import { LoadingSection, ProtectedRoute } from "./shared/components";
+import { AuthProvider } from "./context/AuthContext.tsx";
 
 const queryClient = new QueryClient({
   defaultOptions: {
@@ -56,21 +57,15 @@ const router = createBrowserRouter([
         }),
       },
       {
-        path: "opiniones",
-        lazy: async () => ({
-          Component: (await import("./pages/opinions")).default,
-        }),
-      },
-      {
         path: "contacto",
         lazy: async () => ({
           Component: (await import("./pages/Contact.tsx")).default,
         }),
       },
       {
-        path: "carrito",
+        path: "login",
         lazy: async () => ({
-          Component: (await import("./pages/cart")).default,
+          Component: (await import("./pages/login")).default,
         }),
       },
       {
@@ -85,6 +80,29 @@ const router = createBrowserRouter([
           Component: (await import("./pages/Page404.tsx")).default,
         }),
       },
+      {
+        element: <ProtectedRoute />,
+        children: [
+          {
+            path: "opiniones",
+            lazy: async () => ({
+              Component: (await import("./pages/opinions")).default,
+            }),
+          },
+          {
+            path: "carrito",
+            lazy: async () => ({
+              Component: (await import("./pages/cart")).default,
+            }),
+          },
+          {
+            path: "perfil",
+            lazy: async () => ({
+              Component: (await import("./pages/profile")).default,
+            }),
+          },
+        ],
+      },
     ],
   },
 ]);
@@ -92,8 +110,10 @@ const router = createBrowserRouter([
 createRoot(document.getElementById("root")!).render(
   <StrictMode>
     <QueryClientProvider client={queryClient}>
-      <RouterProvider router={router} />
-      <ReactQueryDevtools initialIsOpen={false}></ReactQueryDevtools>
+      <AuthProvider>
+        <RouterProvider router={router} />
+        <ReactQueryDevtools initialIsOpen={false}></ReactQueryDevtools>
+      </AuthProvider>
     </QueryClientProvider>
   </StrictMode>,
 );
