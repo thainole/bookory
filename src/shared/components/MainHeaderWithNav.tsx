@@ -16,7 +16,6 @@ import {
   faBasketShopping,
   faChevronDown,
   faChevronRight,
-  faMagnifyingGlass,
   faXmark,
 } from "@fortawesome/free-solid-svg-icons";
 
@@ -166,8 +165,6 @@ const MainHeaderWithNav = () => {
           </ul>
 
           <div className="flex gap-2 md:gap-3.5">
-            <HeaderIcon icon={faMagnifyingGlass} iconClass="text-base" />
-            <div className="bg-border w-px h-6"></div>
             <div className="relative" ref={menuRef}>
               <LoginIcon
                 onClick={() => setIsUserInfoOpen((prev) => !prev)}

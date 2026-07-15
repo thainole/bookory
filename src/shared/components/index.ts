@@ -13,6 +13,9 @@ import RatingStars from "./RatingStars";
 import Toast from "./Toast";
 import CloseButton from "./CloseButton";
 import ProtectedRoute from "./ProtectedRoute";
+import SearchBar from "./SearchBar";
+import Pagination from "./Pagination";
+import SortDropdown from "./SortDropdown";
 
 export {
   Button,
@@ -30,4 +33,7 @@ export {
   Toast,
   CloseButton,
   ProtectedRoute,
+  SearchBar,
+  Pagination,
+  SortDropdown,
 };
