@@ -17,6 +17,7 @@ import { faPencil, faPlus } from "@fortawesome/free-solid-svg-icons";
 import { faTrashCan } from "@fortawesome/free-regular-svg-icons";
 import DeleteOpinionModal from "./DeleteOpinionModal";
 import { useAuth } from "../../context/AuthContext";
+import OpinionsChart from "./OpinionsChart";
 
 const AllOpinions = () => {
   const {
@@ -182,7 +183,11 @@ const AllOpinions = () => {
                 ))}
               </tbody>
             </table>
-          ) : (
+          ) : null}
+
+          {data.length > 0 && <OpinionsChart data={data} />}
+
+          {data.length === 0 && (
             <p className="mt-6 mb-20 font-semibold">
               Aún no tenemos opiniones, ¡sé el primero en crear la tuya!
             </p>
