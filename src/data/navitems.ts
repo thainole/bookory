@@ -27,4 +27,11 @@ export const NAV_ITEMS = [
     path: "/opiniones",
     private: true,
   },
+  {
+    id: "explore",
+    name: "Explorar",
+    description: "Explora la ubicación de nuestra librería",
+    path: "/explorar",
+    private: false,
+  },
 ];
